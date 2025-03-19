@@ -8,72 +8,86 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    public class SubCategoryDAO
+    public class OrderDAO
     {
-        public static List<SubCategory> GetSubCategories()
+        public static List<Order> GetOrders()
         {
-            var listSubCategories = new List<SubCategory>();
+            var orders = new List<Order>();
             try
             {
                 using (var context = new BookStoreContext())
                 {
-                    listSubCategories = context.SubCategories
-                        .Include(x => x.Category)
-                        .ToList();
-                }
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-            return listSubCategories;
-        }
-
-        public static List<SubCategory> FindAllSubCategoriesByCategoryId(int categoryId)
-        {
-            var listSubCategories = new List<SubCategory>();
-            try
-            {
-                using (var context = new BookStoreContext())
-                {
-                    listSubCategories = context.SubCategories
-                        .Include(x => x.Category)
-                        .Where(x => x.CategoryId == categoryId).ToList();
-                }
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-            return listSubCategories;
-        }
-
-        public static SubCategory FindSubCategoryById(int subCategoryID)
-        {
-            var subCategory = new SubCategory();
-            try
-            {
-                using (var context = new BookStoreContext())
-                {
-                    subCategory = context.SubCategories
-                        .Include(x => x.Category)
-                        .SingleOrDefault(x => x.CategoryId == subCategoryID);
+                    orders = context.Orders.Include(x => x.Account).ToList();
                 }
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-            return subCategory;
+            return orders;
         }
 
-        public static void AddSubCategory(SubCategory subCategory)
+        public static List<Order> GetOrdersByAccountId(int accountId)
+        {
+            var orders = new List<Order>();
+            try
+            {
+                using (var context = new BookStoreContext())
+                {
+                    orders = context.Orders
+                        .Where(x => x.AccountId == accountId).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return orders;
+        }
+
+        public static Order GetOrderById(int id)
+        {
+            var order = new Order();
+            try
+            {
+                using (var context = new BookStoreContext())
+                {
+                    order = context.Orders
+                        .Include(x => x.Account)
+                        .SingleOrDefault(o => o.OrderId == id);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return order;
+        }
+
+        public static Order AddOrder(Order order)
         {
             try
             {
                 using (var context = new BookStoreContext())
                 {
-                    context.SubCategories.Add(subCategory);
+                    context.Orders.Add(order);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return order;
+        }
+
+        public static void UpdateOrder(Order order)
+        {
+            try
+            {
+                using (var context = new BookStoreContext())
+                {
+                    context.Entry<Order>(order).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                     context.SaveChanges();
                 }
             }
@@ -82,33 +96,15 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
-
-        public static void UpdateSubCategory(SubCategory subCategory)
+        public static void DeleteOrder(Order order)
         {
             try
             {
                 using (var context = new BookStoreContext())
                 {
-                    context.Entry<SubCategory>(subCategory).State =
-                        Microsoft.EntityFrameworkCore.EntityState.Modified;
-                    context.SaveChanges();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public static void DeleteSubCategory(SubCategory subCategory)
-        {
-            try
-            {
-                using (var context = new BookStoreContext())
-                {
-                    var temp = context.SubCategories
-                        .SingleOrDefault(x => x.CategoryId == subCategory.CategoryId);
-                    context.SubCategories.Remove(temp);
+                    var temp = context.Orders
+                        .SingleOrDefault(x => x.OrderId == order.OrderId);
+                    context.Orders.Remove(temp);
                     context.SaveChanges();
                 }
             }

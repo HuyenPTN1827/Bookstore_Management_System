@@ -34,7 +34,7 @@ namespace DataAccess
             {
                 using (var context = new BookStoreContext())
                 {
-                    category = context.Categories.SingleOrDefault(c => c.CategoryId == categoryID);
+                    category = context.Categories.SingleOrDefault(x => x.CategoryId == categoryID);
                 }
             }
             catch (Exception ex)
@@ -44,7 +44,7 @@ namespace DataAccess
             return category;
         }
 
-        public static void SaveCategory(Category category)
+        public static void AddCategory(Category category)
         {
             try
             {
@@ -83,9 +83,8 @@ namespace DataAccess
             {
                 using (var context = new BookStoreContext())
                 {
-                    var temp = context
-                        .Categories
-                        .SingleOrDefault(c => c.CategoryId == category.CategoryId);
+                    var temp = context.Categories
+                        .SingleOrDefault(x => x.CategoryId == category.CategoryId);
                     context.Categories.Remove(temp);
                     context.SaveChanges();
                 }

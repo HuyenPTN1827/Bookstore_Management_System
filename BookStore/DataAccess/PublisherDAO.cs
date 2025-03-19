@@ -7,49 +7,49 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    public class RoleDAO
+    public class PublisherDAO
     {
-        public static List<Role> GetRoles()
+        public static List<Publisher> GetPublishers()
         {
-            var listRoles = new List<Role>();
+            var listPublishers = new List<Publisher>();
             try
             {
                 using (var context = new BookStoreContext())
                 {
-                    listRoles = context.Roles.ToList();
+                    listPublishers = context.Publishers.ToList();
                 }
             }
             catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
-            return listRoles;
+            return listPublishers;
         }
 
-        public static Role FindRoleById(int roleId)
+        public static Publisher FindPublisherById(int publisherId)
         {
-            var Role = new Role();
+            var publisher = new Publisher();
             try
             {
                 using (var context = new BookStoreContext())
                 {
-                    Role = context.Roles.SingleOrDefault(x => x.RoleId == roleId);
+                    publisher = context.Publishers.SingleOrDefault(x => x.PushlisherId == publisherId);
                 }
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-            return Role;
+            return publisher;
         }
 
-        public static void AddRole(Role role)
+        public static void AddPublisher(Publisher publisher)
         {
             try
             {
                 using (var context = new BookStoreContext())
                 {
-                    context.Roles.Add(role);
+                    context.Publishers.Add(publisher);
                     context.SaveChanges();
                 }
             }
@@ -59,13 +59,13 @@ namespace DataAccess
             }
         }
 
-        public static void UpdateRole(Role role)
+        public static void UpdatePublisher(Publisher publisher)
         {
             try
             {
                 using (var context = new BookStoreContext())
                 {
-                    context.Entry<Role>(role).State =
+                    context.Entry<Publisher>(publisher).State =
                         Microsoft.EntityFrameworkCore.EntityState.Modified;
                     context.SaveChanges();
                 }
@@ -76,15 +76,15 @@ namespace DataAccess
             }
         }
 
-        public static void DeleteRole(Role role)
+        public static void DeletePublisher(Publisher publisher)
         {
             try
             {
                 using (var context = new BookStoreContext())
                 {
-                    var temp = context.Roles
-                        .SingleOrDefault(x => x.RoleId == role.RoleId);
-                    context.Roles.Remove(temp);
+                    var temp = context.Publishers
+                        .SingleOrDefault(x => x.PushlisherId == publisher.PushlisherId);
+                    context.Publishers.Remove(temp);
                     context.SaveChanges();
                 }
             }
