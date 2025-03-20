@@ -57,7 +57,7 @@ namespace DataAccess
                 {
                     subCategory = context.SubCategories
                         .Include(x => x.Category)
-                        .SingleOrDefault(x => x.CategoryId == subCategoryID);
+                        .SingleOrDefault(x => x.SubCategoryId == subCategoryID);
                 }
             }
             catch (Exception ex)
@@ -107,7 +107,7 @@ namespace DataAccess
                 using (var context = new BookStoreContext())
                 {
                     var temp = context.SubCategories
-                        .SingleOrDefault(x => x.CategoryId == subCategory.CategoryId);
+                        .SingleOrDefault(x => x.SubCategoryId == subCategory.SubCategoryId);
                     context.SubCategories.Remove(temp);
                     context.SaveChanges();
                 }

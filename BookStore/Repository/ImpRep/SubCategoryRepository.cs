@@ -30,7 +30,7 @@ namespace Repository.ImpRep
             return SubCategoryDAO.FindSubCategoryById(id);
         }
 
-        public List<SubCategory> GetCategories()
+        public List<SubCategory> GetSubCategories()
         {
             return SubCategoryDAO.GetSubCategories();
         }

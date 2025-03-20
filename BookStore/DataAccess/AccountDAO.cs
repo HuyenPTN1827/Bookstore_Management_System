@@ -1,4 +1,5 @@
 ﻿using BusinessObject.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
@@ -17,7 +18,7 @@ namespace DataAccess
             {
                 using (var context = new BookStoreContext())
                 {
-                    listAccounts = context.Accounts.ToList();
+                    listAccounts = context.Accounts.Include(x => x.Role).ToList();
                 }
             }
             catch (Exception ex)
@@ -35,6 +36,7 @@ namespace DataAccess
                 using (var context = new BookStoreContext())
                 {
                     listAccounts = context.Accounts
+                        .Include(x => x.Role)
                         .Where(x => x.Username.ToLower().Trim().Contains(keyword.ToLower().Trim())
                         || x.Fullname.ToLower().Trim().Contains(keyword.ToLower().Trim())
                         || x.Email.ToLower().Trim().Contains(keyword.ToLower().Trim()))
@@ -55,7 +57,9 @@ namespace DataAccess
             {
                 using (var context = new BookStoreContext())
                 {
-                    account = context.Accounts.SingleOrDefault(x => x.AccountId == id);
+                    account = context.Accounts
+                        .Include(x => x.Role)
+                        .SingleOrDefault(x => x.AccountId == id);
                 }
             }
             catch (Exception ex)

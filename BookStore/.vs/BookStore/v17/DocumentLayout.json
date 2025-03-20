@@ -3,44 +3,28 @@
   "WorkspaceRootPath": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\repository\\imprep\\orderdetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|solutionrelative:repository\\imprep\\orderdetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DC00DD04-5E6A-4F06-89EE-02F52009FD3C}|DataAccess\\DataAccess.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\dataaccess\\subcategorydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC00DD04-5E6A-4F06-89EE-02F52009FD3C}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\subcategorydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\repository\\iorderdetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|solutionrelative:repository\\iorderdetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{204C895C-A3F9-43CB-AC66-E7E10A261386}|BusinessObject\\BusinessObject.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\businessobject\\models\\subcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{204C895C-A3F9-43CB-AC66-E7E10A261386}|BusinessObject\\BusinessObject.csproj|solutionrelative:businessobject\\models\\subcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\repository\\imprep\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|solutionrelative:repository\\imprep\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{204C895C-A3F9-43CB-AC66-E7E10A261386}|BusinessObject\\BusinessObject.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\businessobject\\dto\\subcategoryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{204C895C-A3F9-43CB-AC66-E7E10A261386}|BusinessObject\\BusinessObject.csproj|solutionrelative:businessobject\\dto\\subcategoryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\repository\\imprep\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|solutionrelative:repository\\imprep\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3529454-5061-4DD8-BF77-D18CB88D9EB9}|BookStoreAPI\\BookStoreAPI.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\bookstoreapi\\controllers\\subcategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3529454-5061-4DD8-BF77-D18CB88D9EB9}|BookStoreAPI\\BookStoreAPI.csproj|solutionrelative:bookstoreapi\\controllers\\subcategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\repository\\imprep\\publisherrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|solutionrelative:repository\\imprep\\publisherrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3529454-5061-4DD8-BF77-D18CB88D9EB9}|BookStoreAPI\\BookStoreAPI.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\bookstoreapi\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3529454-5061-4DD8-BF77-D18CB88D9EB9}|BookStoreAPI\\BookStoreAPI.csproj|solutionrelative:bookstoreapi\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\repository\\imprep\\subcategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|solutionrelative:repository\\imprep\\subcategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\repository\\imprep\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|solutionrelative:repository\\imprep\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\repository\\imprep\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|solutionrelative:repository\\imprep\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\repository\\imprep\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|solutionrelative:repository\\imprep\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC00DD04-5E6A-4F06-89EE-02F52009FD3C}|DataAccess\\DataAccess.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\dataaccess\\orderdetaildao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC00DD04-5E6A-4F06-89EE-02F52009FD3C}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\orderdetaildao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\repository\\isubcategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1DF1DD6-282D-4B72-90D3-4418702312BF}|Repository\\Repository.csproj|solutionrelative:repository\\isubcategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,140 +34,91 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ISubCategoryRepository.cs",
+              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ISubCategoryRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\ISubCategoryRepository.cs",
+              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ISubCategoryRepository.cs",
+              "RelativeToolTip": "Repository\\ISubCategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T20:29:01.572Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SubCategoryController.cs",
+              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\BookStoreAPI\\Controllers\\SubCategoryController.cs",
+              "RelativeDocumentMoniker": "BookStoreAPI\\Controllers\\SubCategoryController.cs",
+              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\BookStoreAPI\\Controllers\\SubCategoryController.cs",
+              "RelativeToolTip": "BookStoreAPI\\Controllers\\SubCategoryController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA2wA4AAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T20:19:26.74Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OrderDetailRepository.cs",
-              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ImpRep\\OrderDetailRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\ImpRep\\OrderDetailRepository.cs",
-              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ImpRep\\OrderDetailRepository.cs",
-              "RelativeToolTip": "Repository\\ImpRep\\OrderDetailRepository.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAkwCwAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T00:03:07.436Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrderRepository.cs",
-              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ImpRep\\OrderRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\ImpRep\\OrderRepository.cs",
-              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ImpRep\\OrderRepository.cs",
-              "RelativeToolTip": "Repository\\ImpRep\\OrderRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T00:01:19.925Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RoleRepository.cs",
-              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ImpRep\\RoleRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\ImpRep\\RoleRepository.cs",
-              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ImpRep\\RoleRepository.cs",
-              "RelativeToolTip": "Repository\\ImpRep\\RoleRepository.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwCIAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T00:00:18.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IOrderDetailRepository.cs",
-              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\IOrderDetailRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\IOrderDetailRepository.cs",
-              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\IOrderDetailRepository.cs",
-              "RelativeToolTip": "Repository\\IOrderDetailRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Title": "SubCategory.cs",
+              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\BusinessObject\\Models\\SubCategory.cs",
+              "RelativeDocumentMoniker": "BusinessObject\\Models\\SubCategory.cs",
+              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\BusinessObject\\Models\\SubCategory.cs",
+              "RelativeToolTip": "BusinessObject\\Models\\SubCategory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T19:09:20.126Z",
+              "WhenOpened": "2025-03-20T21:33:35.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SubCategoryDAO.cs",
+              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\DataAccess\\SubCategoryDAO.cs",
+              "RelativeDocumentMoniker": "DataAccess\\SubCategoryDAO.cs",
+              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\DataAccess\\SubCategoryDAO.cs",
+              "RelativeToolTip": "DataAccess\\SubCategoryDAO.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAAGgAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T21:29:22.854Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "PublisherRepository.cs",
-              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ImpRep\\PublisherRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\ImpRep\\PublisherRepository.cs",
-              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ImpRep\\PublisherRepository.cs",
-              "RelativeToolTip": "Repository\\ImpRep\\PublisherRepository.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwCIAAAAsAAAAAAAAAA==",
+              "Title": "RoleController.cs",
+              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\BookStoreAPI\\Controllers\\RoleController.cs",
+              "RelativeDocumentMoniker": "BookStoreAPI\\Controllers\\RoleController.cs",
+              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\BookStoreAPI\\Controllers\\RoleController.cs",
+              "RelativeToolTip": "BookStoreAPI\\Controllers\\RoleController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T23:59:22.165Z",
+              "WhenOpened": "2025-03-20T21:08:03.411Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SubCategoryRepository.cs",
-              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ImpRep\\SubCategoryRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\ImpRep\\SubCategoryRepository.cs",
-              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ImpRep\\SubCategoryRepository.cs",
-              "RelativeToolTip": "Repository\\ImpRep\\SubCategoryRepository.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAkwCcAAAAxAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "SubCategoryRequest.cs",
+              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\BusinessObject\\DTO\\SubCategoryRequest.cs",
+              "RelativeDocumentMoniker": "BusinessObject\\DTO\\SubCategoryRequest.cs",
+              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\BusinessObject\\DTO\\SubCategoryRequest.cs",
+              "RelativeToolTip": "BusinessObject\\DTO\\SubCategoryRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T23:57:58.666Z",
+              "WhenOpened": "2025-03-20T20:31:50.977Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CategoryRepository.cs",
-              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ImpRep\\CategoryRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\ImpRep\\CategoryRepository.cs",
-              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ImpRep\\CategoryRepository.cs",
-              "RelativeToolTip": "Repository\\ImpRep\\CategoryRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T23:56:52.082Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BookRepository.cs",
-              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ImpRep\\BookRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\ImpRep\\BookRepository.cs",
-              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ImpRep\\BookRepository.cs",
-              "RelativeToolTip": "Repository\\ImpRep\\BookRepository.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAgwCcAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T23:55:03.928Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AccountRepository.cs",
-              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ImpRep\\AccountRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\ImpRep\\AccountRepository.cs",
-              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\Repository\\ImpRep\\AccountRepository.cs",
-              "RelativeToolTip": "Repository\\ImpRep\\AccountRepository.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAABMAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T23:53:02.307Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "OrderDetailDAO.cs",
-              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\DataAccess\\OrderDetailDAO.cs",
-              "RelativeDocumentMoniker": "DataAccess\\OrderDetailDAO.cs",
-              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\DataAccess\\OrderDetailDAO.cs",
-              "RelativeToolTip": "DataAccess\\OrderDetailDAO.cs",
-              "ViewState": "AgIAAIIAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T19:10:52.746Z"
             }
           ]
         }

@@ -9,7 +9,7 @@ namespace Repository
 {
     public interface ISubCategoryRepository
     {
-        List<SubCategory> GetCategories();
+        List<SubCategory> GetSubCategories();
         List<SubCategory> FindSubCategoryByCategoryId(int categoryId);
         SubCategory FindSubCategoryById(int id);
         void AddSubCategory(SubCategory sc);

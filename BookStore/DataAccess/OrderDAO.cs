@@ -87,7 +87,8 @@ namespace DataAccess
             {
                 using (var context = new BookStoreContext())
                 {
-                    context.Entry<Order>(order).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    context.Entry<Order>(order).State = 
+                        Microsoft.EntityFrameworkCore.EntityState.Modified;
                     context.SaveChanges();
                 }
             }

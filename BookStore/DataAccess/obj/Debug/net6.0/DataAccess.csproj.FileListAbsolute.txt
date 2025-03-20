@@ -1,0 +1,16 @@
+D:\Git\Project\Bookstore_Management_System\BookStore\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
+D:\Git\Project\Bookstore_Management_System\BookStore\DataAccess\bin\Debug\net6.0\DataAccess.dll
+D:\Git\Project\Bookstore_Management_System\BookStore\DataAccess\bin\Debug\net6.0\DataAccess.pdb
+D:\Git\Project\Bookstore_Management_System\BookStore\DataAccess\bin\Debug\net6.0\BusinessObject.dll
+D:\Git\Project\Bookstore_Management_System\BookStore\DataAccess\bin\Debug\net6.0\BusinessObject.pdb
+D:\Git\Project\Bookstore_Management_System\BookStore\DataAccess\obj\Debug\net6.0\DataAccess.csproj.AssemblyReference.cache
+D:\Git\Project\Bookstore_Management_System\BookStore\DataAccess\obj\Debug\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\Project\Bookstore_Management_System\BookStore\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
+D:\Git\Project\Bookstore_Management_System\BookStore\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
+D:\Git\Project\Bookstore_Management_System\BookStore\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\Git\Project\Bookstore_Management_System\BookStore\DataAccess\obj\Debug\net6.0\DataAccess.sourcelink.json
+D:\Git\Project\Bookstore_Management_System\BookStore\DataAccess\obj\Debug\net6.0\DataAccess.csproj.Up2Date
+D:\Git\Project\Bookstore_Management_System\BookStore\DataAccess\obj\Debug\net6.0\DataAccess.dll
+D:\Git\Project\Bookstore_Management_System\BookStore\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
+D:\Git\Project\Bookstore_Management_System\BookStore\DataAccess\obj\Debug\net6.0\DataAccess.pdb
+D:\Git\Project\Bookstore_Management_System\BookStore\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
