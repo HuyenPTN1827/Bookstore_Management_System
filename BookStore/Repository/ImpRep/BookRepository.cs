@@ -20,6 +20,11 @@ namespace Repository.ImpRep
             BookDAO.DeleteBook(b);
         }
 
+        public List<Book> FindBookByCategoryId(int categoryId)
+        {
+            return BookDAO.FindAllBooksByCategoryId(categoryId);
+        }
+
         public Book FindBookById(int id)
         {
             return BookDAO.FindBookById(id);

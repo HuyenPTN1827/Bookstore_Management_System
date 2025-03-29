@@ -180,7 +180,7 @@
     "Parameters": [
       {
         "Name": "book",
-        "Type": "BusinessObject.DTO.BookRequest",
+        "Type": "BusinessObject.Models.Book",
         "IsRequired": true
       }
     ],
@@ -227,7 +227,7 @@
       },
       {
         "Name": "book",
-        "Type": "BusinessObject.DTO.BookRequest",
+        "Type": "BusinessObject.Models.Book",
         "IsRequired": true
       }
     ],
@@ -248,6 +248,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStoreAPI.Controllers.BookController",
+    "Method": "GetByCategoryId",
+    "RelativePath": "api/Book/GetByCategoryId/{categoryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BusinessObject.Models.Book, BusinessObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "BookStoreAPI.Controllers.BookController",

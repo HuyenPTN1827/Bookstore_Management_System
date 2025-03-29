@@ -34,7 +34,7 @@ namespace DataAccess
             {
                 using (var context = new BookStoreContext())
                 {
-                    publisher = context.Publishers.SingleOrDefault(x => x.PushlisherId == publisherId);
+                    publisher = context.Publishers.SingleOrDefault(x => x.PublisherId == publisherId);
                 }
             }
             catch (Exception ex)
@@ -84,7 +84,7 @@ namespace DataAccess
                 using (var context = new BookStoreContext())
                 {
                     var temp = context.Publishers
-                        .SingleOrDefault(x => x.PushlisherId == publisher.PushlisherId);
+                        .SingleOrDefault(x => x.PublisherId == publisher.PublisherId);
                     context.Publishers.Remove(temp);
                     context.SaveChanges();
                 }

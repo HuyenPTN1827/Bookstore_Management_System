@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
 
 namespace BusinessObject.Models
 {
@@ -19,7 +18,11 @@ namespace BusinessObject.Models
 
         public virtual DbSet<Account> Accounts { get; set; } = null!;
         public virtual DbSet<Book> Books { get; set; } = null!;
+        public virtual DbSet<BookDiscount> BookDiscounts { get; set; } = null!;
+        public virtual DbSet<Cart> Carts { get; set; } = null!;
         public virtual DbSet<Category> Categories { get; set; } = null!;
+        public virtual DbSet<Event> Events { get; set; } = null!;
+        public virtual DbSet<EventDiscount> EventDiscounts { get; set; } = null!;
         public virtual DbSet<Order> Orders { get; set; } = null!;
         public virtual DbSet<OrderDetail> OrderDetails { get; set; } = null!;
         public virtual DbSet<Publisher> Publishers { get; set; } = null!;
@@ -30,11 +33,8 @@ namespace BusinessObject.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                var builder = new ConfigurationBuilder()
-                    .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-                IConfigurationRoot configuration = builder.Build();
-                optionsBuilder.UseSqlServer(configuration.GetConnectionString("BookStore"));
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Server=(local);Uid=sa;Pwd=123;Database=BookStore;TrustServerCertificate=true");
             }
         }
 
@@ -46,17 +46,13 @@ namespace BusinessObject.Models
 
                 entity.Property(e => e.Address).HasMaxLength(100);
 
-                entity.Property(e => e.DoB).HasColumnType("datetime");
-
                 entity.Property(e => e.Email).HasMaxLength(100);
 
                 entity.Property(e => e.Fullname).HasMaxLength(100);
 
-                entity.Property(e => e.Gender).HasMaxLength(50);
+                entity.Property(e => e.Password).HasMaxLength(255);
 
-                entity.Property(e => e.Password).HasMaxLength(50);
-
-                entity.Property(e => e.Phone).HasMaxLength(10);
+                entity.Property(e => e.Phone).HasMaxLength(11);
 
                 entity.Property(e => e.RoleId).HasColumnName("RoleID");
 
@@ -65,6 +61,7 @@ namespace BusinessObject.Models
                 entity.HasOne(d => d.Role)
                     .WithMany(p => p.Accounts)
                     .HasForeignKey(d => d.RoleId)
+                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_Accounts_Roles");
             });
 
@@ -80,25 +77,75 @@ namespace BusinessObject.Models
                     .HasMaxLength(255)
                     .HasDefaultValueSql("(N'cover-default.jpg')");
 
-                entity.Property(e => e.Price).HasColumnType("money");
+                entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+
+                entity.Property(e => e.Price).HasColumnType("decimal(18, 2)");
 
                 entity.Property(e => e.PublisherId).HasColumnName("PublisherID");
 
                 entity.Property(e => e.SubCategoryId).HasColumnName("SubCategoryID");
 
-                entity.Property(e => e.UpdateDate)
+                entity.Property(e => e.UpdatedDate)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
 
                 entity.HasOne(d => d.Publisher)
                     .WithMany(p => p.Books)
                     .HasForeignKey(d => d.PublisherId)
+                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_Books_Publishers");
 
                 entity.HasOne(d => d.SubCategory)
                     .WithMany(p => p.Books)
                     .HasForeignKey(d => d.SubCategoryId)
+                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_Books_SubCategories");
+            });
+
+            modelBuilder.Entity<BookDiscount>(entity =>
+            {
+                entity.Property(e => e.BookDiscountId).HasColumnName("BookDiscountID");
+
+                entity.Property(e => e.BookId).HasColumnName("BookID");
+
+                entity.Property(e => e.DiscountPercent).HasColumnType("decimal(5, 2)");
+
+                entity.Property(e => e.EventId).HasColumnName("EventID");
+
+                entity.HasOne(d => d.Book)
+                    .WithMany(p => p.BookDiscounts)
+                    .HasForeignKey(d => d.BookId)
+                    .HasConstraintName("FK_BookDiscounts_Books");
+
+                entity.HasOne(d => d.Event)
+                    .WithMany(p => p.BookDiscounts)
+                    .HasForeignKey(d => d.EventId)
+                    .HasConstraintName("FK_BookDiscounts_Events");
+            });
+
+            modelBuilder.Entity<Cart>(entity =>
+            {
+                entity.ToTable("Cart");
+
+                entity.Property(e => e.CartId).HasColumnName("CartID");
+
+                entity.Property(e => e.AccountId).HasColumnName("AccountID");
+
+                entity.Property(e => e.AddedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.BookId).HasColumnName("BookID");
+
+                entity.HasOne(d => d.Account)
+                    .WithMany(p => p.Carts)
+                    .HasForeignKey(d => d.AccountId)
+                    .HasConstraintName("FK_Cart_Accounts");
+
+                entity.HasOne(d => d.Book)
+                    .WithMany(p => p.Carts)
+                    .HasForeignKey(d => d.BookId)
+                    .HasConstraintName("FK_Cart_Books");
             });
 
             modelBuilder.Entity<Category>(entity =>
@@ -106,6 +153,33 @@ namespace BusinessObject.Models
                 entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
 
                 entity.Property(e => e.CategoryName).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<Event>(entity =>
+            {
+                entity.Property(e => e.EventId).HasColumnName("EventID");
+
+                entity.Property(e => e.EndDate).HasColumnType("datetime");
+
+                entity.Property(e => e.EventName).HasMaxLength(100);
+
+                entity.Property(e => e.StartDate).HasColumnType("datetime");
+            });
+
+            modelBuilder.Entity<EventDiscount>(entity =>
+            {
+                entity.HasKey(e => e.DiscountId);
+
+                entity.Property(e => e.DiscountId).HasColumnName("DiscountID");
+
+                entity.Property(e => e.DiscountPercent).HasColumnType("decimal(5, 2)");
+
+                entity.Property(e => e.EventId).HasColumnName("EventID");
+
+                entity.HasOne(d => d.Event)
+                    .WithMany(p => p.EventDiscounts)
+                    .HasForeignKey(d => d.EventId)
+                    .HasConstraintName("FK_EventDiscounts_Events");
             });
 
             modelBuilder.Entity<Order>(entity =>
@@ -122,10 +196,12 @@ namespace BusinessObject.Models
 
                 entity.Property(e => e.Status).HasMaxLength(50);
 
+                entity.Property(e => e.TotalAmount).HasColumnType("decimal(18, 2)");
+
                 entity.HasOne(d => d.Account)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.AccountId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_Orders_Accounts");
             });
 
@@ -137,7 +213,9 @@ namespace BusinessObject.Models
 
                 entity.Property(e => e.BookId).HasColumnName("BookID");
 
-                entity.Property(e => e.UnitPrice).HasColumnType("money");
+                entity.Property(e => e.DiscountedPrice).HasColumnType("decimal(18, 2)");
+
+                entity.Property(e => e.UnitPrice).HasColumnType("decimal(18, 2)");
 
                 entity.HasOne(d => d.Book)
                     .WithMany(p => p.OrderDetails)
@@ -153,9 +231,7 @@ namespace BusinessObject.Models
 
             modelBuilder.Entity<Publisher>(entity =>
             {
-                entity.HasKey(e => e.PushlisherId);
-
-                entity.Property(e => e.PushlisherId).HasColumnName("PushlisherID");
+                entity.Property(e => e.PublisherId).HasColumnName("PublisherID");
 
                 entity.Property(e => e.Address).HasMaxLength(100);
 

@@ -315,22 +315,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/BookRequest"
+                "$ref": "#/components/schemas/Book"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/BookRequest"
+                "$ref": "#/components/schemas/Book"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/BookRequest"
+                "$ref": "#/components/schemas/Book"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/BookRequest"
+                "$ref": "#/components/schemas/Book"
               }
             }
           }
@@ -439,6 +439,55 @@
         }
       }
     },
+    "/api/Book/GetByCategoryId/{categoryId}": {
+      "get": {
+        "tags": [
+          "Book"
+        ],
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Book"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Book"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Book"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Book/{id}": {
       "get": {
         "tags": [
@@ -497,22 +546,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/BookRequest"
+                "$ref": "#/components/schemas/Book"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/BookRequest"
+                "$ref": "#/components/schemas/Book"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/BookRequest"
+                "$ref": "#/components/schemas/Book"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/BookRequest"
+                "$ref": "#/components/schemas/Book"
               }
             }
           }
@@ -1340,21 +1389,20 @@
             "type": "string",
             "nullable": true
           },
-          "gender": {
-            "type": "string",
-            "nullable": true
-          },
-          "doB": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
           "roleId": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "role": {
             "$ref": "#/components/schemas/Role"
+          },
+          "carts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cart"
+            },
+            "nullable": true
           },
           "orders": {
             "type": "array",
@@ -1393,15 +1441,6 @@
             "type": "string",
             "nullable": true
           },
-          "gender": {
-            "type": "string",
-            "nullable": true
-          },
-          "doB": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
           "roleId": {
             "type": "integer",
             "format": "int32"
@@ -1412,10 +1451,6 @@
       "Book": {
         "type": "object",
         "properties": {
-          "bookId": {
-            "type": "integer",
-            "format": "int32"
-          },
           "bookName": {
             "type": "string",
             "nullable": true
@@ -1432,6 +1467,11 @@
             "type": "number",
             "format": "double"
           },
+          "discountedPrice": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
           "description": {
             "type": "string",
             "nullable": true
@@ -1440,74 +1480,56 @@
             "type": "integer",
             "format": "int32"
           },
-          "updateDate": {
+          "updatedDate": {
             "type": "string",
             "format": "date-time",
             "nullable": true
           },
           "publisherId": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "subCategoryId": {
             "type": "integer",
-            "format": "int32"
-          },
-          "publisher": {
-            "$ref": "#/components/schemas/Publisher"
-          },
-          "subCategory": {
-            "$ref": "#/components/schemas/SubCategory"
-          },
-          "orderDetails": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OrderDetail"
-            },
+            "format": "int32",
             "nullable": true
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "additionalProperties": false
       },
-      "BookRequest": {
+      "Cart": {
         "type": "object",
         "properties": {
-          "bookName": {
-            "type": "string",
-            "nullable": true
+          "cartId": {
+            "type": "integer",
+            "format": "int32"
           },
-          "cover": {
-            "type": "string",
-            "nullable": true
+          "accountId": {
+            "type": "integer",
+            "format": "int32"
           },
-          "author": {
-            "type": "string",
-            "nullable": true
-          },
-          "price": {
-            "type": "number",
-            "format": "double"
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
+          "bookId": {
+            "type": "integer",
+            "format": "int32"
           },
           "quantity": {
             "type": "integer",
             "format": "int32"
           },
-          "updateDate": {
+          "addedDate": {
             "type": "string",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
-          "publisherId": {
-            "type": "integer",
-            "format": "int32"
+          "account": {
+            "$ref": "#/components/schemas/Account"
           },
-          "subCategoryId": {
-            "type": "integer",
-            "format": "int32"
+          "book": {
+            "$ref": "#/components/schemas/Book"
           }
         },
         "additionalProperties": false
@@ -1555,7 +1577,13 @@
           },
           "accountId": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
+          },
+          "totalAmount": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
           },
           "account": {
             "$ref": "#/components/schemas/Account"
@@ -1589,6 +1617,11 @@
             "type": "number",
             "format": "double"
           },
+          "discountedPrice": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
           "book": {
             "$ref": "#/components/schemas/Book"
           },
@@ -1601,7 +1634,7 @@
       "Publisher": {
         "type": "object",
         "properties": {
-          "pushlisherId": {
+          "publisherId": {
             "type": "integer",
             "format": "int32"
           },

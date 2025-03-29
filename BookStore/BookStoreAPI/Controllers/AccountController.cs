@@ -56,8 +56,6 @@ namespace BookStoreAPI.Controllers
                 Email = account.Email,
                 Address = account.Address,
                 Phone = account.Phone,
-                Gender = account.Gender,
-                DoB = account.DoB,
                 RoleId = account.RoleId
             };
             _repository.AddAccount(acc);
@@ -80,8 +78,6 @@ namespace BookStoreAPI.Controllers
             acc.Email = account.Email;
             acc.Address = account.Address;
             acc.Phone = account.Phone;
-            acc.Gender = account.Gender;
-            acc.DoB = account.DoB;
             acc.RoleId = account.RoleId;
 
             _repository.UpdateAccount(acc);

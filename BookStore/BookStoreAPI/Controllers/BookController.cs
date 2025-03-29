@@ -33,6 +33,12 @@ namespace BookStoreAPI.Controllers
             return _repository.FindBookBySubCategoryId(subCategoryId);
         }
 
+        [HttpGet("GetByCategoryId/{categoryId}")]
+        public ActionResult<IEnumerable<Book>> GetByCategoryId(int categoryId)
+        {
+            return _repository.FindBookByCategoryId(categoryId);
+        }
+
         // GET api/<BookController>/5
         [HttpGet("{id}")]
         public ActionResult<Book> GetBookById(int id)
@@ -42,7 +48,7 @@ namespace BookStoreAPI.Controllers
 
         // POST api/<BookController>
         [HttpPost]
-        public IActionResult AddBook(BookRequest book)
+        public IActionResult AddBook(Book book)
         {
             var b = new Book()
             {
@@ -52,7 +58,8 @@ namespace BookStoreAPI.Controllers
                 Price = book.Price,
                 Description = book.Description,
                 Quantity = book.Quantity,
-                UpdateDate = DateTime.Now,
+                CreatedDate = DateTime.Now,
+                UpdatedDate = null,
                 PublisherId = book.PublisherId,
                 SubCategoryId = book.SubCategoryId
             };
@@ -62,7 +69,7 @@ namespace BookStoreAPI.Controllers
 
         // PUT api/<BookController>/5
         [HttpPut("{id}")]
-        public IActionResult UpdateBook(int id, BookRequest book)
+        public IActionResult UpdateBook(int id, Book book)
         {
             var b = _repository.FindBookById(id);
             if (b == null)
@@ -76,7 +83,7 @@ namespace BookStoreAPI.Controllers
             b.Price = book.Price;
             b.Description = book.Description;
             b.Quantity = book.Quantity;
-            b.UpdateDate = DateTime.Now;
+            b.UpdatedDate = DateTime.Now;
             b.PublisherId = book.PublisherId;
             b.SubCategoryId = book.SubCategoryId;
 

@@ -1,4 +1,5 @@
-﻿using BusinessObject.Models;
+﻿using BusinessObject.DTO;
+using BusinessObject.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,34 @@ namespace DataAccess
             {
                 using (var context = new BookStoreContext())
                 {
+                    // Lấy danh sách ID sự kiện đang diễn ra
+                    var activeEvents = context.Events
+                        .Where(e => e.StartDate <= DateTime.Now && e.EndDate >= DateTime.Now)
+                        .Select(e => e.EventId)
+                        .ToList();
+
                     listBooks = context.Books
-                        .Include(x => x.Publisher)
-                        .Include(x => x.SubCategory)
+                        .Include(x => x.BookDiscounts)
+                        .Select(x => new Book
+                        {
+                            BookId = x.BookId,
+                            BookName = x.BookName,
+                            Cover = x.Cover,
+                            Author = x.Author,
+                            Price = x.Price,
+                            Description = x.Description,
+                            Quantity = x.Quantity,
+                            PublisherId = x.PublisherId,
+                            SubCategoryId = x.SubCategoryId,
+                            CreatedDate = x.CreatedDate,
+                            UpdatedDate = x.UpdatedDate,
+
+                            // Kiểm tra xem sách có khuyến mãi trong sự kiện đang diễn ra không
+                            DiscountedPrice = x.BookDiscounts
+                                .Where(d => activeEvents.Contains(d.EventId))
+                                .Select(d => x.Price * (1 - d.DiscountPercent / 100))
+                                .FirstOrDefault()  // Lấy khuyến mãi đầu tiên (nếu có)
+                        })
                         .OrderByDescending(x => x.BookId)
                         .ToList();
                 }
@@ -38,12 +64,36 @@ namespace DataAccess
             {
                 using (var context = new BookStoreContext())
                 {
+                    var activeEvents = context.Events
+                        .Where(e => e.StartDate <= DateTime.Now && e.EndDate >= DateTime.Now)
+                        .Select(e => e.EventId)
+                        .ToList();
+
                     listBooks = context.Books
+                        .Include(x => x.BookDiscounts)
                         .Include(x => x.Publisher)
-                        .Include(x => x.SubCategory)
                         .Where(x => x.BookName.ToLower().Trim().Contains(keyword.ToLower().Trim())
                         || x.Author.ToLower().Trim().Contains(keyword.ToLower().Trim())
                         || x.Publisher.PublisherName.ToLower().Trim().Contains(keyword.ToLower().Trim()))
+                        .Select(x => new Book
+                        {
+                            BookId = x.BookId,
+                            BookName = x.BookName,
+                            Cover = x.Cover,
+                            Author = x.Author,
+                            Price = x.Price,
+                            Description = x.Description,
+                            Quantity = x.Quantity,
+                            PublisherId = x.PublisherId,
+                            SubCategoryId = x.SubCategoryId,
+                            CreatedDate = x.CreatedDate,
+                            UpdatedDate = x.UpdatedDate,
+
+                            DiscountedPrice = x.BookDiscounts
+                                .Where(d => activeEvents.Contains(d.EventId))
+                                .Select(d => x.Price * (1 - d.DiscountPercent / 100))
+                                .FirstOrDefault()
+                        })
                         .OrderByDescending(x => x.BookId)
                         .ToList();
                 }
@@ -62,10 +112,35 @@ namespace DataAccess
             {
                 using (var context = new BookStoreContext())
                 {
+                    var activeEvents = context.Events
+                        .Where(e => e.StartDate <= DateTime.Now && e.EndDate >= DateTime.Now)
+                        .Select(e => e.EventId)
+                        .ToList();
+
                     listBooks = context.Books
-                        .Include(x => x.Publisher)
+                        .Include(x => x.BookDiscounts)
                         .Include(x => x.SubCategory)
                         .Where(x => x.SubCategoryId == subCategoryId)
+                        .Select(x => new Book
+                        {
+                            BookId = x.BookId,
+                            BookName = x.BookName,
+                            Cover = x.Cover,
+                            Author = x.Author,
+                            Price = x.Price,
+                            Description = x.Description,
+                            Quantity = x.Quantity,
+                            PublisherId = x.PublisherId,
+                            SubCategoryId = x.SubCategoryId,
+                            CreatedDate = x.CreatedDate,
+                            UpdatedDate = x.UpdatedDate,
+
+                            DiscountedPrice = x.BookDiscounts
+                                .Where(d => activeEvents.Contains(d.EventId))
+                                .Select(d => x.Price * (1 - d.DiscountPercent / 100))
+                                .FirstOrDefault()
+                        })
+                        .OrderByDescending(x => x.BookId)
                         .ToList();
                 }
             }
@@ -76,7 +151,52 @@ namespace DataAccess
             return listBooks;
         }
 
+        public static List<Book> FindAllBooksByCategoryId(int categoryId)
+        {
+            var listBooks = new List<Book>();
+            try
+            {
+                using (var context = new BookStoreContext())
+                {
+                    var activeEvents = context.Events
+                        .Where(e => e.StartDate <= DateTime.Now && e.EndDate >= DateTime.Now)
+                        .Select(e => e.EventId)
+                        .ToList();
 
+                    listBooks = context.Books
+                        .Include(x => x.BookDiscounts)
+                        .Include(x => x.SubCategory)
+                        .ThenInclude(c => c.Category)
+                        .Where(x => x.SubCategory.CategoryId == categoryId)
+                        .Select(x => new Book
+                        {
+                            BookId = x.BookId,
+                            BookName = x.BookName,
+                            Cover = x.Cover,
+                            Author = x.Author,
+                            Price = x.Price,
+                            Description = x.Description,
+                            Quantity = x.Quantity,
+                            PublisherId = x.PublisherId,
+                            SubCategoryId = x.SubCategoryId,
+                            CreatedDate = x.CreatedDate,
+                            UpdatedDate = x.UpdatedDate,
+
+                            DiscountedPrice = x.BookDiscounts
+                                .Where(d => activeEvents.Contains(d.EventId))
+                                .Select(d => x.Price * (1 - d.DiscountPercent / 100))
+                                .FirstOrDefault()
+                        })
+                        .OrderByDescending(x => x.BookId)
+                        .ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return listBooks;
+        }
 
         public static Book FindBookById(int bookId)
         {
@@ -85,17 +205,39 @@ namespace DataAccess
             {
                 using (var context = new BookStoreContext())
                 {
+                    var activeEvents = context.Events
+                        .Where(e => e.StartDate <= DateTime.Now && e.EndDate >= DateTime.Now)
+                        .Select(e => e.EventId)
+                        .ToList();
+
                     book = context.Books
+                        .Include(x => x.BookDiscounts)
                         .Include(x => x.Publisher)
                         .Include(x => x.SubCategory)
+                        .ThenInclude(x => x.Category)
+                        .Select(x => new Book
+                        {
+                            BookId = x.BookId,
+                            BookName = x.BookName,
+                            Cover = x.Cover,
+                            Author = x.Author,
+                            Price = x.Price,
+                            Description = x.Description,
+                            Quantity = x.Quantity,
+                            PublisherId = x.PublisherId,
+                            SubCategoryId = x.SubCategoryId,
+                            CreatedDate = x.CreatedDate,
+                            UpdatedDate = x.UpdatedDate,
+
+                            DiscountedPrice = x.BookDiscounts
+                                .Where(d => activeEvents.Contains(d.EventId))
+                                .Select(d => x.Price * (1 - d.DiscountPercent / 100))
+                                .FirstOrDefault(),
+
+                            Publisher = x.Publisher,
+                            SubCategory = x.SubCategory
+                        })
                         .SingleOrDefault(x => x.BookId == bookId);
-                    //if (book != null)
-                    //{
-                    //    book.OrderDetails = context.OrderDetails
-                    //        .Include(x => x.Book)
-                    //        .Include(x => x.Order)
-                    //        .Where(x => x.BookId == bookId).ToList();
-                    //}
                 }
             }
             catch (Exception ex)

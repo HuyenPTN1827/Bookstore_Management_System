@@ -12,6 +12,7 @@ namespace Repository
         List<Book> GetBooks();
         List<Book> SearchBook(string keyword);
         List<Book> FindBookBySubCategoryId(int subCategoryId);
+        List<Book> FindBookByCategoryId(int categoryId);
         Book FindBookById(int id);
         void AddBook(Book b);
         void UpdateBook(Book b);

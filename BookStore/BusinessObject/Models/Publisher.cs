@@ -10,7 +10,7 @@ namespace BusinessObject.Models
             Books = new HashSet<Book>();
         }
 
-        public int PushlisherId { get; set; }
+        public int PublisherId { get; set; }
         public string PublisherName { get; set; } = null!;
         public string? Address { get; set; }
         public string? Phone { get; set; }
