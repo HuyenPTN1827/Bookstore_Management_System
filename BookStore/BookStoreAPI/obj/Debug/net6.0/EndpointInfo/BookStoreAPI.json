@@ -50,22 +50,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountRequest"
+                "$ref": "#/components/schemas/Account"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountRequest"
+                "$ref": "#/components/schemas/Account"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountRequest"
+                "$ref": "#/components/schemas/Account"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountRequest"
+                "$ref": "#/components/schemas/Account"
               }
             }
           }
@@ -183,22 +183,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountRequest"
+                "$ref": "#/components/schemas/Account"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountRequest"
+                "$ref": "#/components/schemas/Account"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountRequest"
+                "$ref": "#/components/schemas/Account"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountRequest"
+                "$ref": "#/components/schemas/Account"
               }
             }
           }
@@ -1173,22 +1173,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/SubCategoryRequest"
+                "$ref": "#/components/schemas/SubCategory"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SubCategoryRequest"
+                "$ref": "#/components/schemas/SubCategory"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/SubCategoryRequest"
+                "$ref": "#/components/schemas/SubCategory"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/SubCategoryRequest"
+                "$ref": "#/components/schemas/SubCategory"
               }
             }
           }
@@ -1307,22 +1307,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/SubCategoryRequest"
+                "$ref": "#/components/schemas/SubCategory"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SubCategoryRequest"
+                "$ref": "#/components/schemas/SubCategory"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/SubCategoryRequest"
+                "$ref": "#/components/schemas/SubCategory"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/SubCategoryRequest"
+                "$ref": "#/components/schemas/SubCategory"
               }
             }
           }
@@ -1361,10 +1361,6 @@
       "Account": {
         "type": "object",
         "properties": {
-          "accountId": {
-            "type": "integer",
-            "format": "int32"
-          },
           "username": {
             "type": "string",
             "nullable": true
@@ -1393,57 +1389,6 @@
             "type": "integer",
             "format": "int32",
             "nullable": true
-          },
-          "role": {
-            "$ref": "#/components/schemas/Role"
-          },
-          "carts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Cart"
-            },
-            "nullable": true
-          },
-          "orders": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Order"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "AccountRequest": {
-        "type": "object",
-        "properties": {
-          "username": {
-            "type": "string",
-            "nullable": true
-          },
-          "password": {
-            "type": "string",
-            "nullable": true
-          },
-          "fullname": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "address": {
-            "type": "string",
-            "nullable": true
-          },
-          "phone": {
-            "type": "string",
-            "nullable": true
-          },
-          "roleId": {
-            "type": "integer",
-            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -1502,131 +1447,12 @@
         },
         "additionalProperties": false
       },
-      "Cart": {
-        "type": "object",
-        "properties": {
-          "cartId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "accountId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "bookId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "quantity": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "addedDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "account": {
-            "$ref": "#/components/schemas/Account"
-          },
-          "book": {
-            "$ref": "#/components/schemas/Book"
-          }
-        },
-        "additionalProperties": false
-      },
       "Category": {
         "type": "object",
         "properties": {
-          "categoryId": {
-            "type": "integer",
-            "format": "int32"
-          },
           "categoryName": {
             "type": "string",
             "nullable": true
-          },
-          "subCategories": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SubCategory"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Order": {
-        "type": "object",
-        "properties": {
-          "orderId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "status": {
-            "type": "string",
-            "nullable": true
-          },
-          "orderDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "deliveryDate": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "accountId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "totalAmount": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "account": {
-            "$ref": "#/components/schemas/Account"
-          },
-          "orderDetails": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OrderDetail"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "OrderDetail": {
-        "type": "object",
-        "properties": {
-          "orderId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "bookId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "quantity": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "unitPrice": {
-            "type": "number",
-            "format": "double"
-          },
-          "discountedPrice": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "book": {
-            "$ref": "#/components/schemas/Book"
-          },
-          "order": {
-            "$ref": "#/components/schemas/Order"
           }
         },
         "additionalProperties": false
@@ -1634,10 +1460,6 @@
       "Publisher": {
         "type": "object",
         "properties": {
-          "publisherId": {
-            "type": "integer",
-            "format": "int32"
-          },
           "publisherName": {
             "type": "string",
             "nullable": true
@@ -1649,13 +1471,6 @@
           "phone": {
             "type": "string",
             "nullable": true
-          },
-          "books": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Book"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1663,53 +1478,14 @@
       "Role": {
         "type": "object",
         "properties": {
-          "roleId": {
-            "type": "integer",
-            "format": "int32"
-          },
           "roleName": {
             "type": "string",
-            "nullable": true
-          },
-          "accounts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Account"
-            },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
       "SubCategory": {
-        "type": "object",
-        "properties": {
-          "subCategoryId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "subCategoryName": {
-            "type": "string",
-            "nullable": true
-          },
-          "categoryId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "category": {
-            "$ref": "#/components/schemas/Category"
-          },
-          "books": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Book"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "SubCategoryRequest": {
         "type": "object",
         "properties": {
           "subCategoryName": {

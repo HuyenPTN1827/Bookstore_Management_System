@@ -47,7 +47,7 @@ namespace BookStoreAPI.Controllers
 
             r.RoleName = role.RoleName;
 
-            _repository.UpdateRole(role);
+            _repository.UpdateRole(r);
             return NoContent();
         }
 

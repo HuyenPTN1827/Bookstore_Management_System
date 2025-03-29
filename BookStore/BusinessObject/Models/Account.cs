@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace BusinessObject.Models
 {
@@ -11,6 +12,7 @@ namespace BusinessObject.Models
             Orders = new HashSet<Order>();
         }
 
+        [JsonIgnore]
         public int AccountId { get; set; }
         public string Username { get; set; } = null!;
         public string Password { get; set; } = null!;
@@ -20,8 +22,11 @@ namespace BusinessObject.Models
         public string? Phone { get; set; }
         public int? RoleId { get; set; }
 
+        [JsonIgnore]
         public virtual Role? Role { get; set; }
+        [JsonIgnore]
         public virtual ICollection<Cart> Carts { get; set; }
+        [JsonIgnore]
         public virtual ICollection<Order> Orders { get; set; }
     }
 }

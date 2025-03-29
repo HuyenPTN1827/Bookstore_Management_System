@@ -50,7 +50,7 @@ namespace BookStoreAPI.Controllers
             p.Address = publisher.Address;
             p.Phone = publisher.Phone;
 
-            _repository.UpdatePublisher(publisher);
+            _repository.UpdatePublisher(p);
             return NoContent();
         }
 

@@ -36,20 +36,15 @@ namespace BookStoreAPI.Controllers
 
         // POST api/<SubCategoryController>
         [HttpPost]
-        public IActionResult AddSubCategory(SubCategoryRequest subCategory)
+        public IActionResult AddSubCategory(SubCategory subCategory)
         {
-            var sc = new SubCategory
-            {
-                SubCategoryName = subCategory.SubCategoryName,
-                CategoryId = subCategory.CategoryId
-            };
-            _repository.AddSubCategory(sc);
+            _repository.AddSubCategory(subCategory);
             return NoContent();
         }
 
         // PUT api/<SubCategoryController>/5
         [HttpPut("{id}")]
-        public IActionResult UpdateSubCategory(int id, SubCategoryRequest subCategory)
+        public IActionResult UpdateSubCategory(int id, SubCategory subCategory)
         {
             var sc = _repository.FindSubCategoryById(id);
             if (sc == null)

@@ -46,25 +46,25 @@ namespace BookStoreAPI.Controllers
 
         // POST api/<AccountController>
         [HttpPost]
-        public IActionResult AddAccount(AccountRequest account)
+        public IActionResult AddAccount(Account account)
         {
-            var acc = new Account
-            {
-                Username = account.Username,
-                Password = account.Password,
-                Fullname = account.Fullname,
-                Email = account.Email,
-                Address = account.Address,
-                Phone = account.Phone,
-                RoleId = account.RoleId
-            };
-            _repository.AddAccount(acc);
+            //var acc = new Account
+            //{
+            //    Username = account.Username,
+            //    Password = account.Password,
+            //    Fullname = account.Fullname,
+            //    Email = account.Email,
+            //    Address = account.Address,
+            //    Phone = account.Phone,
+            //    RoleId = account.RoleId
+            //};
+            _repository.AddAccount(account);
             return NoContent();
         }
 
         // PUT api/<AccountController>/5
         [HttpPut("{id}")]
-        public IActionResult UpdateAccount(int id, AccountRequest account)
+        public IActionResult UpdateAccount(int id, Account account)
         {
             var acc = _repository.FindAccountById(id);
             if (acc == null)

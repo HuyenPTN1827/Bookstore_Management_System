@@ -17,7 +17,9 @@ namespace DataAccess
             {
                 using (var context = new BookStoreContext())
                 {
-                    listCategories = context.Categories.ToList();
+                    listCategories = context.Categories
+                        .Include(c => c.SubCategories)
+                        .ToList();
                 }
             }
             catch (Exception e)
@@ -34,7 +36,9 @@ namespace DataAccess
             {
                 using (var context = new BookStoreContext())
                 {
-                    category = context.Categories.SingleOrDefault(x => x.CategoryId == categoryID);
+                    category = context.Categories
+                        .Include(c => c.SubCategories)
+                        .SingleOrDefault(x => x.CategoryId == categoryID);
                 }
             }
             catch (Exception ex)

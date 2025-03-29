@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace BusinessObject.Models
 {
@@ -10,11 +11,13 @@ namespace BusinessObject.Models
             Books = new HashSet<Book>();
         }
 
+        [JsonIgnore]
         public int PublisherId { get; set; }
         public string PublisherName { get; set; } = null!;
         public string? Address { get; set; }
         public string? Phone { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<Book> Books { get; set; }
     }
 }

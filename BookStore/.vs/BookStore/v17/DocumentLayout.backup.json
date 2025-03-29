@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC00DD04-5E6A-4F06-89EE-02F52009FD3C}|DataAccess\\DataAccess.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\dataaccess\\bookdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC00DD04-5E6A-4F06-89EE-02F52009FD3C}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\bookdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3529454-5061-4DD8-BF77-D18CB88D9EB9}|BookStoreAPI\\BookStoreAPI.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\bookstoreapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3529454-5061-4DD8-BF77-D18CB88D9EB9}|BookStoreAPI\\BookStoreAPI.csproj|solutionrelative:bookstoreapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3529454-5061-4DD8-BF77-D18CB88D9EB9}|BookStoreAPI\\BookStoreAPI.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\bookstoreapi\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3529454-5061-4DD8-BF77-D18CB88D9EB9}|BookStoreAPI\\BookStoreAPI.csproj|solutionrelative:bookstoreapi\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{204C895C-A3F9-43CB-AC66-E7E10A261386}|BusinessObject\\BusinessObject.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\businessobject\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{204C895C-A3F9-43CB-AC66-E7E10A261386}|BusinessObject\\BusinessObject.csproj|solutionrelative:businessobject\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{204C895C-A3F9-43CB-AC66-E7E10A261386}|BusinessObject\\BusinessObject.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\businessobject\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{204C895C-A3F9-43CB-AC66-E7E10A261386}|BusinessObject\\BusinessObject.csproj|solutionrelative:businessobject\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC00DD04-5E6A-4F06-89EE-02F52009FD3C}|DataAccess\\DataAccess.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\dataaccess\\categorydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC00DD04-5E6A-4F06-89EE-02F52009FD3C}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\categorydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DC00DD04-5E6A-4F06-89EE-02F52009FD3C}|DataAccess\\DataAccess.csproj|d:\\git\\project\\bookstore_management_system\\bookstore\\dataaccess\\accountdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC00DD04-5E6A-4F06-89EE-02F52009FD3C}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\accountdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,63 +22,53 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BookController.cs",
-              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\BookStoreAPI\\Controllers\\BookController.cs",
-              "RelativeDocumentMoniker": "BookStoreAPI\\Controllers\\BookController.cs",
-              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\BookStoreAPI\\Controllers\\BookController.cs",
-              "RelativeToolTip": "BookStoreAPI\\Controllers\\BookController.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAUwFcAAAAxAAAAAAAAAA==",
+              "Title": "Account.cs",
+              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\BusinessObject\\Models\\Account.cs",
+              "RelativeDocumentMoniker": "BusinessObject\\Models\\Account.cs",
+              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\BusinessObject\\Models\\Account.cs",
+              "RelativeToolTip": "BusinessObject\\Models\\Account.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBwAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T21:16:58.154Z",
+              "WhenOpened": "2025-03-29T23:26:06.337Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Book.cs",
-              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\BusinessObject\\Models\\Book.cs",
-              "RelativeDocumentMoniker": "BusinessObject\\Models\\Book.cs",
-              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\BusinessObject\\Models\\Book.cs",
-              "RelativeToolTip": "BusinessObject\\Models\\Book.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAowBwAAAAvAAAAAAAAAA==",
+              "Title": "AccountDAO.cs",
+              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\DataAccess\\AccountDAO.cs",
+              "RelativeDocumentMoniker": "DataAccess\\AccountDAO.cs",
+              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\DataAccess\\AccountDAO.cs",
+              "RelativeToolTip": "DataAccess\\AccountDAO.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T21:10:35.5Z",
+              "WhenOpened": "2025-03-29T23:26:12.332Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BookDAO.cs",
-              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\DataAccess\\BookDAO.cs",
-              "RelativeDocumentMoniker": "DataAccess\\BookDAO.cs",
-              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\DataAccess\\BookDAO.cs",
-              "RelativeToolTip": "DataAccess\\BookDAO.cs",
-              "ViewState": "AgIAANgAAAAAAAAAAAAowO0AAAA3AAAAAAAAAA==",
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\BookStoreAPI\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "BookStoreAPI\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\BookStoreAPI\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "BookStoreAPI\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAA7wEIAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T21:10:30.182Z",
+              "WhenOpened": "2025-03-29T23:26:50.29Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CategoryDAO.cs",
-              "DocumentMoniker": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\DataAccess\\CategoryDAO.cs",
-              "RelativeDocumentMoniker": "DataAccess\\CategoryDAO.cs",
-              "ToolTip": "D:\\Git\\Project\\Bookstore_Management_System\\BookStore\\DataAccess\\CategoryDAO.cs",
-              "RelativeToolTip": "DataAccess\\CategoryDAO.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T20:30:52.805Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             }
           ]
         }

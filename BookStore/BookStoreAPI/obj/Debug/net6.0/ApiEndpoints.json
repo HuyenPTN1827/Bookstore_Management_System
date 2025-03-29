@@ -29,7 +29,7 @@
     "Parameters": [
       {
         "Name": "account",
-        "Type": "BusinessObject.DTO.AccountRequest",
+        "Type": "BusinessObject.Models.Account",
         "IsRequired": true
       }
     ],
@@ -76,7 +76,7 @@
       },
       {
         "Name": "account",
-        "Type": "BusinessObject.DTO.AccountRequest",
+        "Type": "BusinessObject.Models.Account",
         "IsRequired": true
       }
     ],
@@ -654,7 +654,7 @@
     "Parameters": [
       {
         "Name": "subCategory",
-        "Type": "BusinessObject.DTO.SubCategoryRequest",
+        "Type": "BusinessObject.Models.SubCategory",
         "IsRequired": true
       }
     ],
@@ -701,7 +701,7 @@
       },
       {
         "Name": "subCategory",
-        "Type": "BusinessObject.DTO.SubCategoryRequest",
+        "Type": "BusinessObject.Models.SubCategory",
         "IsRequired": true
       }
     ],
