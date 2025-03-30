@@ -17,7 +17,23 @@ namespace DataAccess
             {
                 using (var context = new BookStoreContext())
                 {
-                    orders = context.Orders.Include(x => x.Account).ToList();
+                    //orders = context.Orders.Include(x => x.Account).ToList();
+                    orders = context.Orders
+                        .Include(o => o.Account)
+                        .Include(o => o.OrderDetails) 
+                        .ThenInclude(od => od.Book)  
+                        .Select(o => new Order
+                        {
+                            OrderId = o.OrderId,
+                            Status = o.Status,
+                            OrderDate = o.OrderDate,
+                            DeliveryDate = o.DeliveryDate,
+                            AccountId = o.AccountId,
+                            Account = o.Account,
+                            OrderDetails = o.OrderDetails, 
+                            TotalAmount = o.OrderDetails.Sum(od => od.Quantity * od.UnitPrice ?? 0) // Tính tổng tiền
+                        })
+                    .ToList();
                 }
             }
             catch (Exception ex)
@@ -35,7 +51,22 @@ namespace DataAccess
                 using (var context = new BookStoreContext())
                 {
                     orders = context.Orders
-                        .Where(x => x.AccountId == accountId).ToList();
+                        .Include(o => o.Account)
+                        .Include(o => o.OrderDetails)
+                        .ThenInclude(od => od.Book)
+                        .Where(x => x.AccountId == accountId)
+                        .Select(o => new Order
+                        {
+                            OrderId = o.OrderId,
+                            Status = o.Status,
+                            OrderDate = o.OrderDate,
+                            DeliveryDate = o.DeliveryDate,
+                            AccountId = o.AccountId,
+                            Account = o.Account,
+                            OrderDetails = o.OrderDetails,
+                            TotalAmount = o.OrderDetails.Sum(od => od.Quantity * od.UnitPrice ?? 0) // Tính tổng tiền
+                        })
+                        .ToList();
                 }
             }
             catch (Exception ex)
@@ -54,6 +85,19 @@ namespace DataAccess
                 {
                     order = context.Orders
                         .Include(x => x.Account)
+                        .Include(o => o.OrderDetails)
+                        .ThenInclude(od => od.Book)
+                        .Select(o => new Order
+                        {
+                            OrderId = o.OrderId,
+                            Status = o.Status,
+                            OrderDate = o.OrderDate,
+                            DeliveryDate = o.DeliveryDate,
+                            AccountId = o.AccountId,
+                            Account = o.Account,
+                            OrderDetails = o.OrderDetails,
+                            TotalAmount = o.OrderDetails.Sum(od => od.Quantity * od.UnitPrice ?? 0) // Tính tổng tiền
+                        })
                         .SingleOrDefault(o => o.OrderId == id);
                 }
             }

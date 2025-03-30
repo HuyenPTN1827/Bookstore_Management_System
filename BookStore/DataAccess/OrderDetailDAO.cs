@@ -20,6 +20,7 @@ namespace DataAccess
                     orderDetails = context.OrderDetails
                         .Include(x => x.Order)
                         .Include(x => x.Book)
+                        .ThenInclude(x => x.BookDiscounts)
                         .ToList();
                 }
             }
@@ -40,6 +41,7 @@ namespace DataAccess
                     orderDetails = context.OrderDetails
                         .Include(x => x.Order)
                         .Include(x => x.Book)
+                        .ThenInclude(x => x.BookDiscounts)
                         .Where(x => x.BookId == bookId)
                         .ToList();
                 }
@@ -61,6 +63,7 @@ namespace DataAccess
                     orderDetails = context.OrderDetails
                         .Include(x => x.Order)
                         .Include(x => x.Book)
+                        .ThenInclude(x => x.BookDiscounts)
                         .Where(x => x.OrderId == orderId)
                         .ToList();
                 }
@@ -82,6 +85,7 @@ namespace DataAccess
                     orderDetail = context.OrderDetails
                         .Include(x => x.Order)
                         .Include(x => x.Book)
+                        .ThenInclude(x => x.BookDiscounts)
                         .SingleOrDefault(x => x.OrderId == orderId && x.BookId == bookId);
                 }
             }

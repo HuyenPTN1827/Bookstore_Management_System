@@ -14,6 +14,7 @@ namespace Repository
         List<Book> FindBookBySubCategoryId(int subCategoryId);
         List<Book> FindBookByCategoryId(int categoryId);
         Book FindBookById(int id);
+        Book GetBookById(int id);
         void AddBook(Book b);
         void UpdateBook(Book b);
         void DeleteBook(Book b);

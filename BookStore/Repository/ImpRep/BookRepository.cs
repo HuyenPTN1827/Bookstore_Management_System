@@ -35,6 +35,11 @@ namespace Repository.ImpRep
             return BookDAO.FindAllBooksBySubCategoryId(subCategoryId);
         }
 
+        public Book GetBookById(int id)
+        {
+            return BookDAO.GetBookById(id);
+        }
+
         public List<Book> GetBooks()
         {
             return BookDAO.GetBooks();

@@ -1,5 +1,4 @@
-﻿using BusinessObject.DTO;
-using BusinessObject.Models;
+﻿using BusinessObject.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -237,6 +236,33 @@ namespace DataAccess
                             Publisher = x.Publisher,
                             SubCategory = x.SubCategory
                         })
+                        .SingleOrDefault(x => x.BookId == bookId);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return book;
+        }
+
+        public static Book GetBookById(int bookId)
+        {
+            var book = new Book();
+            try
+            {
+                using (var context = new BookStoreContext())
+                {
+                    var activeEvents = context.Events
+                        .Where(e => e.StartDate <= DateTime.Now && e.EndDate >= DateTime.Now)
+                        .Select(e => e.EventId)
+                        .ToList();
+
+                    book = context.Books
+                        .Include(x => x.BookDiscounts)
+                        .Include(x => x.Publisher)
+                        .Include(x => x.SubCategory)
+                        .ThenInclude(x => x.Category)
                         .SingleOrDefault(x => x.BookId == bookId);
                 }
             }

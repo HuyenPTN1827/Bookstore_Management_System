@@ -17,11 +17,11 @@ namespace BusinessObject.Models
         [JsonIgnore]
         public int BookId { get; set; }
         public string BookName { get; set; } = null!;
-        public string? Cover { get; set; }
+        public string? Cover { get; set; } = "cover-default.jpg";
         public string Author { get; set; } = null!;
         public decimal Price { get; set; }
         [NotMapped]
-        public decimal? DiscountedPrice { get; set; }
+        public decimal? DiscountedPrice { get; set; } = 0;
         public string? Description { get; set; }
         public int Quantity { get; set; }
         public DateTime? UpdatedDate { get; set; }
